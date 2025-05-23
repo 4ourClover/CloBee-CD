@@ -25073,6 +25073,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       serviceAccountName: argocd-applicationset-controller
       volumes:
       - configMap:
@@ -25204,6 +25209,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       serviceAccountName: argocd-dex-server
       volumes:
       - emptyDir: {}
@@ -25302,6 +25312,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       securityContext:
         runAsNonRoot: true
         seccompProfile:
@@ -25399,6 +25414,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       securityContext:
         runAsNonRoot: true
         runAsUser: 999
@@ -25727,6 +25747,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       serviceAccountName: argocd-repo-server
       volumes:
       - configMap:
@@ -26129,6 +26154,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       serviceAccountName: argocd-server
       volumes:
       - emptyDir: {}
@@ -26483,6 +26513,11 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       serviceAccountName: argocd-application-controller
       volumes:
       - emptyDir: {}
