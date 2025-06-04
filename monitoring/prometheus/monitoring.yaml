@@ -89,6 +89,12 @@ spec:
             name: prometheus-config
       nodeSelector:
         role: harbor
+      tolerations:
+        - key: "harbor-only"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+      
 ---
 # Prometheus Service
 apiVersion: v1
