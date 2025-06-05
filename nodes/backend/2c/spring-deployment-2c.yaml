@@ -27,7 +27,7 @@ spec:
                       - ap-northeast-2c
       containers:
         - name: spring-app
-          image: clobee-harbor.shop/library/spring-app:81
+          image: clobee-harbor.shop/library/spring-app:82
           ports:
             - containerPort: 8080
           envFrom:
