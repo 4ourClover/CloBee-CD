@@ -18,7 +18,7 @@ spec:
         role: frontend
       containers:
         - name: react-app
-          image: clobee-harbor.shop/library/react-app:188
+          image: clobee-harbor.shop/library/react-app:189
           ports:
             - containerPort: 3000
 ---
