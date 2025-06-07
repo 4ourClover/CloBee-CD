@@ -33,6 +33,10 @@ spec:
           envFrom:
             - secretRef:
                 name: spring-env-secret
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
 
 ---
 apiVersion: v1
