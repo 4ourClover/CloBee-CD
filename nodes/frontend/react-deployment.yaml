@@ -21,6 +21,11 @@ spec:
           image: clobee-harbor.shop/library/react-app:192
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+              
 ---
 apiVersion: v1
 kind: Service
