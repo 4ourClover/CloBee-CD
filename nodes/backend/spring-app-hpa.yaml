@@ -8,7 +8,7 @@ spec:
     kind: Deployment
     name: spring-app
   minReplicas: 2
-  maxReplicas: 4  # 30
+  maxReplicas: 30
   metrics:
     - type: Resource
       resource:
@@ -16,3 +16,21 @@ spec:
         target:
           type: Utilization
           averageUtilization: 80
+  behavior:
+    scaleUp:
+      # scaleUp 정책: Pod 수를 한 번에 최대 50% 또는 최대 2개까지만 증가시키도록 설정
+      stabilizationWindowSeconds: 60  # 과도한 scaleUp 방지 대기 시간(초)
+      policies:
+        - type: Percent
+          value: 50    # 최대 50%씩만 증가
+          periodSeconds: 60
+        - type: Pods
+          value: 2     # 최대 2개까지만 증가
+          periodSeconds: 60
+    scaleDown:
+      # scaleDown 정책: 급격한 감소 방지
+      stabilizationWindowSeconds: 300  # 5분 동안 변화 관찰 후 안정적으로 감소
+      policies:
+        - type: Percent
+          value: 50    # 최대 50%씩만 감소
+          periodSeconds: 60
